@@ -8,24 +8,24 @@ import json
 
 
 #v2.11 分析策略
-URL ='http://192.168.5.242:8011/'
+URL ='http://192.168.1.186:8011/'
 
 l=[]
-strategy_id_list = [3]
-n1 = 3000
-n2 = 6000
+strategy_id_list = [5]
+# n1 = 8053
+# n2 = 8200
 #1、修改此处的文件路径,读取该路径下所有固件
-for filename in os.listdir(r'H:\\download\\completed'):
-    l.append('H:\\download\\completed\\'+filename)
-l =l[n1:n2]
+# for filename in os.listdir(r'H:\\download\\completed'):
+#     l.append('H:\\download\\completed\\'+filename)
+# l =l[n1:n2]
 
 
 # for filename in os.listdir(r'E:\\易识\\固件适配类型\\QNX'):
 #     l.append('E:\\易识\\固件适配类型\\QNX\\'+filename)
     #E:\易识\固件适配类型\QNX
 
-# for filename in os.listdir(r'E:\\易识\\网关、采集器固件（含内蒙古电力项目）\\内蒙古电科项目客户提供\\安全测试用固件汇总'):
-#    l.append('E:\\易识\\网关、采集器固件（含内蒙古电力项目）\\内蒙古电科项目客户提供\\安全测试用固件汇总\\'+filename)
+for filename in os.listdir(r'C:\\Users\\anban\\Desktop\\gujianhuizong\\checksec_test_cases\\data'):
+   l.append('C:\\Users\\anban\\Desktop\\gujianhuizong\\checksec_test_cases\\data\\'+filename)
 
 #2、查找目录下以特定后缀结尾的文件  修改floder和extension（后缀）即可  n限制取文件的个数（n1=0,n2=51,从第1个开始取到第50个文件）
 # floder = "E:\\download\\completed"
