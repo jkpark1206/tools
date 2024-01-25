@@ -12,7 +12,7 @@ import json
 #plugin = '''["software_components","cwe_checker"]'''
 plugin = '''["soft","cve","encryption","func","security","sensitive_msg","cwe"]'''
 #URL ='http://103.79.25.186:38011/'
-URL ='http://192.168.1.250:8011/'
+URL ='http://192.168.1.186:8011/'
 
 l=[]
 #1、修改此处的文件路径,读取该路径下所有固件
@@ -40,16 +40,24 @@ l=[]
 #     l = l[n1:n2]
 
 
+n1 = 7488
+n2 = 8200
+# 1、修改此处的文件路径,读取该路径下所有固件
+for filename in os.listdir(r'H:\\download\\completed'):
+    l.append('H:\\download\\completed\\'+filename)
+l =l[n1:n2]
+
+
 #3、读取文件夹下所有文件，查到是目录则继续遍历，直到读取完该目录下所有的文件，返回所有文件路径
-def traverse_folder(path) :
-    for file_name in os.listdir(path):#获取当前目录下所有文件和文件夹的名称
-        file_path=os.path.join(path,file_name)#将文件名和路径连接起来
-        if os.path.isdir(file_path):#判断该路径是否为文件夹
-            traverse_folder(file_path)#如果是文件夹,则递归调用该函数
-        else:
-            l.append(file_path)
-    return l
-traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\rtos-test-cases')
+# def traverse_folder(path) :
+#     for file_name in os.listdir(path):#获取当前目录下所有文件和文件夹的名称
+#         file_path=os.path.join(path,file_name)#将文件名和路径连接起来
+#         if os.path.isdir(file_path):#判断该路径是否为文件夹
+#             traverse_folder(file_path)#如果是文件夹,则递归调用该函数
+#         else:
+#             l.append(file_path)
+#     return l
+# traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\rtos-test-cases')
 
 
 def Get_file_md5(file_path):
@@ -102,6 +110,9 @@ class Upload_firmware:
 
 
 if __name__ == '__main__':
+    # path_list = ['H:\\download\\completed']
+    # for path in path_list:
+    #     traverse_folder(path)
     # traverse_folder('F:\\易识\网关、采集器固件（含内蒙古电力项目）\\内蒙古电科项目客户提供\\上面文件解压后提取的固件汇总')
     Upload_firmware().Create_firmtask()
 

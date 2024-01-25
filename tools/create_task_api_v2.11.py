@@ -1,4 +1,5 @@
 # -- coding: utf-8 --**
+import time
 
 import requests
 from jsonpath import jsonpath
@@ -11,7 +12,11 @@ import json
 URL ='http://192.168.1.186:8011/'
 
 l=[]
-strategy_id_list = [5]
+strategy_id_list = [224,225,226,227,228,229,230,233,
+                    234,237,240,241,242,243,
+                    244,245,246,247,248,249,250,251,252,253,
+                    254,255,256,257,258,259,260,261,262,263,
+                    264,265,266,267,268,269,270,271,272,273,274,275,]
 # n1 = 8053
 # n2 = 8200
 #1、修改此处的文件路径,读取该路径下所有固件
@@ -24,8 +29,8 @@ strategy_id_list = [5]
 #     l.append('E:\\易识\\固件适配类型\\QNX\\'+filename)
     #E:\易识\固件适配类型\QNX
 
-for filename in os.listdir(r'C:\\Users\\anban\\Desktop\\gujianhuizong\\checksec_test_cases\\data'):
-   l.append('C:\\Users\\anban\\Desktop\\gujianhuizong\\checksec_test_cases\\data\\'+filename)
+# for filename in os.listdir(r'C:\\Users\\anban\\Desktop\\gujianhuizong\\vbf_test_cases'):
+#    l.append('C:\\Users\\anban\\Desktop\\gujianhuizong\\vbf_test_cases\\'+filename)
 
 #2、查找目录下以特定后缀结尾的文件  修改floder和extension（后缀）即可  n限制取文件的个数（n1=0,n2=51,从第1个开始取到第50个文件）
 # floder = "E:\\download\\completed"
@@ -41,14 +46,14 @@ for filename in os.listdir(r'C:\\Users\\anban\\Desktop\\gujianhuizong\\checksec_
 
 
 #3、读取文件夹下所有文件，查到是目录则继续遍历，直到读取完该目录下所有的文件，返回所有文件路径
-# def traverse_folder(path) :
-#     for file_name in os.listdir(path):#获取当前目录下所有文件和文件夹的名称
-#         file_path=os.path.join(path,file_name)#将文件名和路径连接起来
-#         if os.path.isdir(file_path):#判断该路径是否为文件夹
-#             traverse_folder(file_path)#如果是文件夹,则递归调用该函数
-#         else:
-#             l.append(file_path)
-#     return l
+def traverse_folder(path) :
+    for file_name in os.listdir(path):#获取当前目录下所有文件和文件夹的名称
+        file_path=os.path.join(path,file_name)#将文件名和路径连接起来
+        if os.path.isdir(file_path):#判断该路径是否为文件夹
+            traverse_folder(file_path)#如果是文件夹,则递归调用该函数
+        else:
+            l.append(file_path)
+    return l
 
 
 def Get_file_md5(file_path):
@@ -81,19 +86,20 @@ class Upload_firmware:
                 for strategy_id in strategy_id_list:
                     d = {
                         "file_md5":file_md5,
-                        "strategy_id":strategy_id
+                        "strategy_id":strategy_id,
+                        "start":'ture'
                          }
                     # file_size = os.path.getsize(firm_path) / 1024 / 1024 /1024
                     # if file_size > 5:  # 过滤超过5GB的固件，需要上传5GB以下的固件，反之即可
                     #     continue
                     # else:
                     with open(firm_path, 'rb') as file:
-                            f = {'firmware': file}
-                            res2 = self.session.post('{}api/task/create'.format(URL),data= d,headers=h,files=f)
-                            task_id = json.loads(res2.text)["data"]["id"]
-                            d2 = {"task_id": task_id}
-                            res3 = self.session.put('{}api/task/start'.format(URL), json=d2, headers=h)
-                            print(res3.text)
+                        f = {'firmware': file}
+                        res2 = self.session.post('{}api/task/create'.format(URL),data= d,headers=h,files=f)
+                        if res2 == 200:
+                            print(json.loads(res2.text)["data"])
+                            continue
+
         except Exception as e:
                 print(e)
 
@@ -103,7 +109,7 @@ if __name__ == '__main__':
     # path_list = ['H:\\download\\completed']
     # for path in path_list:
     #     traverse_folder(path)
-    # print(l)
+    traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\xinjiebaoceshi\\test')
     Upload_firmware().Create_firmtask()
 
 
