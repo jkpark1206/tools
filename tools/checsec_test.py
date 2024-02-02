@@ -81,7 +81,7 @@ class Base_Compare_Data:
                     continue
 
                 # 把列表的数据加到excel表格中
-                Excel_Create(datas)
+            Excel_Create(datas)
         except Exception as e:
             print('固件提取数据失败,失败原因：{}'.format(e))
 

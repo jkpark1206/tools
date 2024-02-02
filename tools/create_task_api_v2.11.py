@@ -12,18 +12,21 @@ import json
 URL ='http://192.168.1.186:8011/'
 
 l=[]
-strategy_id_list = [224,225,226,227,228,229,230,233,
-                    234,237,240,241,242,243,
-                    244,245,246,247,248,249,250,251,252,253,
-                    254,255,256,257,258,259,260,261,262,263,
-                    264,265,266,267,268,269,270,271,272,273,274,275,]
-# n1 = 8053
-# n2 = 8200
-#1、修改此处的文件路径,读取该路径下所有固件
-# for filename in os.listdir(r'H:\\download\\completed'):
-#     l.append('H:\\download\\completed\\'+filename)
-# l =l[n1:n2]
+# strategy_id_list = [224,225,226,227,228,229,230,233,
+#                     234,237,240,241,242,243,
+#                     244,245,246,247,248,249,250,251,252,253,
+#                     254,255,256,257,258,259,260,261,262,263,
+#                     264,265,266,267,268,269,270,271,272,273,274,275]
 
+strategy_id_list = [290]
+
+# n1 = 8200
+# n2 = 9076
+#1、修改此处的文件路径,读取该路径下所有固件
+# for filename in os.listdir(r'H:\\易识\\test_cases\\Vxworks_test_cases'):
+#     l.append('H:\\易识\\test_cases\\Vxworks_test_cases\\'+filename)
+# l =l[n1:n2]
+# print(l)
 
 # for filename in os.listdir(r'E:\\易识\\固件适配类型\\QNX'):
 #     l.append('E:\\易识\\固件适配类型\\QNX\\'+filename)
@@ -86,8 +89,7 @@ class Upload_firmware:
                 for strategy_id in strategy_id_list:
                     d = {
                         "file_md5":file_md5,
-                        "strategy_id":strategy_id,
-                        "start":'ture'
+                        "strategy_id":strategy_id
                          }
                     # file_size = os.path.getsize(firm_path) / 1024 / 1024 /1024
                     # if file_size > 5:  # 过滤超过5GB的固件，需要上传5GB以下的固件，反之即可
@@ -96,9 +98,15 @@ class Upload_firmware:
                     with open(firm_path, 'rb') as file:
                         f = {'firmware': file}
                         res2 = self.session.post('{}api/task/create'.format(URL),data= d,headers=h,files=f)
-                        if res2 == 200:
-                            print(json.loads(res2.text)["data"])
+                        res_2_code = json.loads(res2.text)["code"]
+                        if res_2_code != 200:
+                            print(strategy_id,json.loads(res2.text))
                             continue
+                        else:
+                            task_id = json.loads(res2.text)["data"]["id"]
+                            d2 = {"task_id": task_id}
+                            res3 = self.session.put('{}api/task/start'.format(URL), json=d2, headers=h)
+                            print(res3.text)
 
         except Exception as e:
                 print(e)
@@ -106,10 +114,10 @@ class Upload_firmware:
 
 
 if __name__ == '__main__':
-    # path_list = ['H:\\download\\completed']
-    # for path in path_list:
-    #     traverse_folder(path)
-    traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\xinjiebaoceshi\\test')
+#     path_list = ['H:\\download\\completed']
+#     for path in path_list:
+#         traverse_folder(path)
+    traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\xinjiebaoceshi\\fact_extractor_test')
     Upload_firmware().Create_firmtask()
 
 
