@@ -1,4 +1,4 @@
-print('{"code":3001,"data":{},"message":"\u7b56\u7565\u4e0d\u5b58\u5728"}'.encode().decode())
+print('{"code":4005,"data":{},"message":"\u7cfb\u7edf\u63d2\u4ef6\u72b6\u6001\u5f02\u5e38"}'.encode().decode())
 
 
 # import hashlib

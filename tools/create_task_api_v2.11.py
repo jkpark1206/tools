@@ -9,7 +9,7 @@ import json
 
 
 #v2.11 分析策略
-URL ='http://192.168.1.186:8011/'
+URL ='http://192.168.5.242:8011/'
 
 l=[]
 # strategy_id_list = [224,225,226,227,228,229,230,233,
@@ -18,7 +18,8 @@ l=[]
 #                     254,255,256,257,258,259,260,261,262,263,
 #                     264,265,266,267,268,269,270,271,272,273,274,275]
 
-strategy_id_list = [290]
+strategy_id_list = [88]
+
 
 # n1 = 8200
 # n2 = 9076
@@ -117,7 +118,7 @@ if __name__ == '__main__':
 #     path_list = ['H:\\download\\completed']
 #     for path in path_list:
 #         traverse_folder(path)
-    traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\xinjiebaoceshi\\fact_extractor_test')
+    traverse_folder('H:\\易识\\路由器固件\\output')
     Upload_firmware().Create_firmtask()
 
 
