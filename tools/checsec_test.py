@@ -4,10 +4,6 @@ import os
 from openpyxl import Workbook
 import time
 
-plugin ='''["soft", "cve", "security", "sensitive", "pwd"]'''
-l = []
-filepath = 'C:\\Users\\anban\\Desktop\\gujianhuizong\\checksec_test_cases\\data'
-datas = [['固件', 'RPATH', 'FORTIFY', 'RELRO', 'Stack','NX', 'PIE']]
 
 
 def Excel_Create(data):
@@ -49,7 +45,6 @@ class OperationpostgresBase:
 
 class Base_Compare_Data:
     def __init__(self):
-        database = ['ys_yishi','192.168.1.186',25432,'postgres',123456]
         self.cur = OperationpostgresBase(database).conn.cursor()  # 连接数据库
 
 
@@ -73,7 +68,8 @@ class Base_Compare_Data:
                     Stack = checsec_list['Stack']['value']
                     NX = checsec_list['NX']['value']
                     PIE = checsec_list['PIE']['value']
-                    ll = (firmname, RPATH, FORTIFY, RELRO, Stack, NX, PIE)
+                    Sysmbols = checsec_list['SYMBOLS']['value']
+                    ll = (firmname, RPATH, FORTIFY, RELRO, Stack, NX, PIE, Sysmbols)
                     data = list(ll)
                     datas.append(data)
 
@@ -87,4 +83,9 @@ class Base_Compare_Data:
 
 
 if __name__ == '__main__':
+    plugin = '''["soft", "cve", "cwe", "security", "baseline", "compliance", "license", "malware", "sensitive", "pwd"]'''
+    l = []
+    filepath = 'D:\\Downloads\\A_test_cases\\binary-samples'
+    datas = [['固件', 'RPATH', 'FORTIFY', 'RELRO', 'Stack', 'NX', 'PIE','Symbols']]
+    database = ['ys_yishi', '192.168.1.186', 25432, 'postgres', 123456]
     Base_Compare_Data().get_file_type_datas()

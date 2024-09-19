@@ -111,6 +111,7 @@ class Base_Compare_Data:
 
                     # 敏感信息数据由ip和user插件的数据相加
                     All_sensetive = All_ip_uri + All_user_passwd
+
                     #把所有数据放进一个列表中
                     ll = (firmname,file_type,file_type_count,cpu,All_sensetive)
                     data = list(ll)

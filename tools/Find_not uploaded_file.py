@@ -8,10 +8,6 @@ from openpyxl import Workbook
 import time
 
 
-database = ['ys_yishi','192.168.5.242',25432,'postgres',123456]
-l = []
-create_time = '2024-03-05'
-datas = []
 
 def traverse_folder(path) :
     for file_name in os.listdir(path):#获取当前目录下所有文件和文件夹的名称
@@ -84,7 +80,12 @@ class Base_Compare_Data:
 
 
 if __name__ == '__main__':
-    traverse_folder('H:\\易识\\路由器固件\\output\\ubiquiti')
+    database = ['ys_yishi', '192.168.5.242', 25432, 'postgres', 123456]
+    l = []
+    create_time = '2024-04-30'
+    datas = []
+    traverse_folder('D:\\Downloads\\A_test_cases\\jizhunceshi')
+    traverse_folder('H:\\vmshare\\download_firmware\\未知\\120xxXR')
     Base_Compare_Data(database).Not_upload_file()
 
 

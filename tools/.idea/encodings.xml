@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Avaya/USER4_2_40.zip" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240403-152810.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-151958.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-153630.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-154819.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-155255.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-155635.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-160027.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-160942.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-163316.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-163408.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-163439.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240407-163629.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240408-134506.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240408-140139.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/firmware_download20240408-143405.log" charset="GBK" />
     <file url="file://$PROJECT_DIR$/upload.log" charset="GBK" />
     <file url="file://$PROJECT_DIR$/upload20240301-182631.log" charset="GBK" />
     <file url="file://$PROJECT_DIR$/upload20240301-183352.log" charset="GBK" />
@@ -20,5 +36,12 @@
     <file url="file://$PROJECT_DIR$/upload20240305-110240.log" charset="GBK" />
     <file url="file://$PROJECT_DIR$/upload20240305-150426.log" charset="GBK" />
     <file url="file://$PROJECT_DIR$/upload20240305-153837.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/upload20240403-142613.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/upload20240403-142847.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/upload20240403-145045.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/upload20240403-151232.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/upload20240403-152226.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/upload20240403-152415.log" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

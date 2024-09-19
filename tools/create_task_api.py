@@ -9,10 +9,10 @@ import json
 
 #v2.10敏感信息合并插件
 #plugin = '''["software_components","cwe_checker","cve_lookup","crypto_hints","elf_analysis","elf_checksec","sensitive_msg"]'''
-#plugin = '''["software_components","cwe_checker"]'''
-plugin = '''["software_components","cve_lookup","crypto_hints","elf_analysis","elf_checksec","sensitive_msg"]'''
+plugin = '''["software_components","cve_lookup"]'''
+#plugin = '''["software_components","cve_lookup","crypto_hints","elf_analysis","elf_checksec","sensitive_msg"]'''
 #URL ='http://103.79.25.186:38011/'
-URL ='http://192.168.5.199:8011/'
+URL ='http://192.168.5.71:8011/'
 
 l=[]
 #1、修改此处的文件路径,读取该路径下所有固件
@@ -57,7 +57,7 @@ def traverse_folder(path) :
         else:
             l.append(file_path)
     return l
-traverse_folder('C:\\Users\\anban\\Desktop\\gujianhuizong\\jizhunceshi')
+
 
 
 def Get_file_md5(file_path):
@@ -90,8 +90,8 @@ class Upload_firmware:
                 h = {"Authorization": self.token}
                 d = {"device_name": task_name,
                      "task_name": task_name,
-                     "vendor": 'test',
-                     "version": 'test',
+                     "vendor": "test",
+                     "version": "test",
                      "plugin": plugin,
                      "file_md5": file_md5,
                      "task_lib_tag": "false"
@@ -102,7 +102,7 @@ class Upload_firmware:
                     res2 = self.session.post('{}api/task/create'.format(URL),data= d,headers=h,files=f)
                     task_id = json.loads(res2.text)["data"]["id"]
                     d2 = {"task_id": task_id}
-                    res3 = self.session.put('{}api/task/start'.format(URL), json=d2, headers=h)
+                    res3 = self.session.post('{}api/task/start'.format(URL), json=d2, headers=h)
                     print(res3.text)
         except Exception as e:
                 print(e)
@@ -114,6 +114,7 @@ if __name__ == '__main__':
     # for path in path_list:
     #     traverse_folder(path)
     # traverse_folder('F:\\易识\网关、采集器固件（含内蒙古电力项目）\\内蒙古电科项目客户提供\\上面文件解压后提取的固件汇总')
+    traverse_folder('H:\\易识\\网关、采集器固件（含内蒙古电力项目）\\内蒙古电科项目客户提供\\安全测试用固件汇总')
     Upload_firmware().Create_firmtask()
 
 
