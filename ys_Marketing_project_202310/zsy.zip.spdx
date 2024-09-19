@@ -1,0 +1,152 @@
+{
+    "SPDXID": "SPDXRef-DOCUMENT",
+    "spdxVersion": "SPDX-2.3",
+    "creationInfo": {
+        "comment": "This document has been automatically generated.",
+        "creators": [
+            "User: root"
+        ],
+        "created": "2023-10-12 16:37:36",
+        "licenseListVersion": "3.20"
+    },
+    "name": "SBOM_zsy.zip",
+    "packages": [
+        {
+            "SPDXID": "SPDXRef-Package-1-zsy.zip",
+            "name": "zsy.zip",
+            "primaryPackagePurpose": "APPLICATION",
+            "supplier": "all",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-2-vsftpd",
+            "name": "vsftpd",
+            "versionInfo": "3.0.3",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-3-BusyBox",
+            "name": "BusyBox",
+            "versionInfo": "1.31.1",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-4-udhcp",
+            "name": "udhcp",
+            "versionInfo": "1.31.1",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-5-Bash",
+            "name": "Bash",
+            "versionInfo": "5.0.16",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-6-OpenSSH",
+            "name": "OpenSSH",
+            "versionInfo": "8.2",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-7-OpenSSL",
+            "name": "OpenSSL",
+            "versionInfo": "1.1.1g",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        },
+        {
+            "SPDXID": "SPDXRef-Package-8-hostapd",
+            "name": "hostapd",
+            "versionInfo": "2.9",
+            "primaryPackagePurpose": "LIBRARY",
+            "supplier": "NOASSERTION",
+            "downloadLocation": "NOASSERTION",
+            "filesAnalyzed": false,
+            "licenseConcluded": "NOASSERTION",
+            "licenseDeclared": "NOASSERTION",
+            "copyrightText": "NOASSERTION"
+        }
+    ],
+    "relationships": [
+        {
+            "spdxElementId": "SPDXRef-DOCUMENT",
+            "relatedSpdxElement": "SPDXRef-Package-1-zsy.zip",
+            "relationshipType": "DESCRIBES"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-2-vsftpd",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-3-BusyBox",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-4-udhcp",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-5-Bash",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-6-OpenSSH",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-7-OpenSSL",
+            "relationshipType": "DEPENDS_ON"
+        },
+        {
+            "spdxElementId": "SPDXRef-Package-1-zsy.zip",
+            "relatedSpdxElement": "SPDXRef-Package-8-hostapd",
+            "relationshipType": "DEPENDS_ON"
+        }
+    ]
+}
